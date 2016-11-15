@@ -3,7 +3,7 @@
 //Transmetteur pour le mercedes actros DIY
 
 #include <SoftwareSerial.h>
-SoftwareSerial xbee(10,11);
+SoftwareSerial xbee(2,3);
 void setup() {
 	xbee.begin(57600);
 	Serial.begin(115200);
