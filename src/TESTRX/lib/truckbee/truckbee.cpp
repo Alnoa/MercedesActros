@@ -74,7 +74,7 @@ void TruckBee::Etablir_liason(bool mode){
   //Serial.print("ATMY1\r"); // this xbee is 1
   //Serial2.print("ATID0B58\r");// reseau xbee adresse == 041986 en HEX
   //Serial2.print("ATWR\r");//enregistre la cfg sur le module
-  //Serial2.print("ATCN\r");//quitte le mode commande
+  Serial2.print("ATCN\r");//quitte le mode commande
 
   #ifdef DEBUG
   Serial.println("Xbee connecté et configuré");
@@ -87,7 +87,7 @@ void TruckBee::Dernier_contact_RF(){// !serialavilable >10 fois ex ou verif etat
 }
 void TruckBee::etat_FAILSAFE(){}
 void TruckBee::Recoie(){
-  if (Serial2.available() >= 6 ) { // wait for 6 characters
+  if (Serial2.available() >= 5 ) { // wait for 6 characters
     for (int i=0; i < 6; i++){
       commandes[i] = Serial2.read();
       Serial.print(commandes[i],HEX);
